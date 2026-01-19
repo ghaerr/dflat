@@ -1,5 +1,4 @@
 # External ELKS application Makefile
-TOPDIR = /Users/greg/net/elks-gh
 
 ###############################################################################
 include $(TOPDIR)/.config
@@ -40,7 +39,6 @@ AR      = ia16-elf-ar
 #        D - F L A T   M A K E F I L E  -  ELKS
 #-------------------------------------------------------------------
 
-TOPDIR = /Users/greg/net/elks-gh
 SMALL=
 FULL=
 
@@ -81,27 +79,27 @@ memopad: $(OBJS) $(LIBS)
 SMALLOBJS = smallpad.o
 smallpad: $(SMALLOBJS) $(LIBS)
 	$(CC) $(LDFLAGS) -o $@ $(SMALLOBJS) -L. -ldflat
-	cp $@ $(TOPDIR)/elkscmd/rootfs_template/root
+	#cp $@ $(TOPDIR)/elkscmd/rootfs_template/root
 
 CONSOBJS = cons.o runes.o kcp437.o
 cons: $(CONSOBJS)
 	$(LD) $(LDFLAGS) -o $@ $(CONSOBJS)
-	cp cons $(TOPDIR)/elkscmd/rootfs_template/root
+	#cp cons $(TOPDIR)/elkscmd/rootfs_template/root
 
 TTYOBJS = ttyinfo.o peekpoke.o runes.o unikey.o tty.o
 ttyinfo: $(TTYOBJS)
 	$(LD) $(LDFLAGS) -o $@ $(TTYOBJS)
-	cp ttyinfo $(TOPDIR)/elkscmd/rootfs_template/root
+	#cp ttyinfo $(TOPDIR)/elkscmd/rootfs_template/root
 
 MATRIXOBJS = matrix.o tty.o tty-cp437.o runes.o kcp437.o
 matrix: $(MATRIXOBJS)
 	$(CC) $(LDFLAGS) -o $@ $(MATRIXOBJS)
-	cp $@ $(TOPDIR)/elkscmd/rootfs_template/root
+	#cp $@ $(TOPDIR)/elkscmd/rootfs_template/root
 
 TESTOBJS = test.o peekpoke.o
 test: $(TESTOBJS)
 	$(LD) $(LDFLAGS) -o $@ $(TESTOBJS)
-	cp test $(TOPDIR)/elkscmd/rootfs_template/root
+	#cp test $(TOPDIR)/elkscmd/rootfs_template/root
 
 DFLATOBJS = \
     message.o keys.o \
