@@ -76,7 +76,7 @@ LDFLAGS += -maout-heap=0xffff
 OBJS = memopad.o dialogs.o menus.o
 memopad: $(OBJS) $(LIBS)
 	$(LD) $(LDFLAGS) -o $@ $(OBJS) -L. -ldflat
-	cp $@ $(TOPDIR)/elkscmd/rootfs_template/root
+	#cp $@ $(TOPDIR)/elkscmd/rootfs_template/root
 
 SMALLOBJS = smallpad.o
 smallpad: $(SMALLOBJS) $(LIBS)
